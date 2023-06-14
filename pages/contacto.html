@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Destinos - Turismo Argentina </title>
+    <link rel="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/normalize.css"> 
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="logo">
+                <img src="../img/luggage.png" alt="logo">
+                <h2 class="nombre-empresa"> Top Destinos </h2>
+            </div>
+            <nav>
+            <div class="holder">
+                <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/novedades.html">Novedades</a></li>
+                <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                <li><a class="activo" href="/pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+    
+        <section class="contact">
+            <div class="u-wrapper">
+              <div class="contact-content">
+        
+                <form id="form" action="" class="form">
+                  <h3 class="tag"><span>¿Tenes una consulta? Charlemos!</span></h3>
+                  <label for="name">Nombre Completo <span>*</span></label>
+                  <input name="name" required type="text" id="name" placeholder="Juan">
+                  <label for="email">Correo electrónico <span>*</span></label>
+                  <input name="email" type="text" id="email" required placeholder="juan@gmail.com">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+                  <button type="submit" class="btn primary full">enviar mensaje</button>
+                </form>
+                <a href="mailto:camilanieto10@gmail.com" id="mailpersonal"></a>
+              </div>
+            </div>
+          </section>
+    </main>
+    
+        <footer>
+        <p> Redes Sociales</p>
+        <ul>
+            <li><a href="https://www.youtube.com" target="_blank"> Youtube</a></li>
+            <li><a href="https://www.facebook.com" target="_blank"> Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank"> Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const $form = document.querySelector('#form')
+        const $buttonMailto = document.querySelector('#mailpersonal')
+        
+        $form.addEventListener('submit', handleSubmit)
+        
+        function handleSubmit(event) {
+          event.preventDefault()
+          const form = new FormData(this)
+          $buttonMailto.setAttribute('href', `camilanieto10@gmail.com?subject=nombre ${form.get('name')}  correo ${form.get('email')}&body=${form.get('message')}`)
+          $buttonMailto.click()
+        }
+    </script>
+</body>
+</html>
