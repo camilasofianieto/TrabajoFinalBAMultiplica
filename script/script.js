@@ -1,3 +1,5 @@
+// este codigo forma parte de la pagina de "contacto", tuve problemas al tratar de vincular con este archivo //
+
 <script>
 const $form = document.querySelector('#form')
 const $buttonMailto = document.querySelector('#mailpersonal')
